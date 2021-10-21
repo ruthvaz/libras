@@ -1,1 +1,3 @@
-# Libras+
+<h1 align="center">
+    <img alt="Libras+" title="Libras+" src="https://raw.githubusercontent.com/ruthvaz/libras/master/logo.png" width="220px" />
+</h1>
