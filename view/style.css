@@ -1,0 +1,94 @@
+* {
+    margin: 0;
+    border: 0;
+}
+
+body {
+    background-color: #F0F0F5;
+    font-family: 'Ubuntu';
+    font-weight: 300;
+    color: #0C1D27;
+}
+
+.inicio-mobile {
+    background-image: url("img/logo-background.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: left top;
+    background-size: contain;
+}
+
+.container {
+    margin: 0 2em;
+}
+
+.inicio-brand {
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    font-size: 24px;
+    margin: 4em 0 4em 0;
+}
+
+.inicio-logo {
+    background: url("img/logo.png") center center/35px no-repeat;
+    height: 35px;
+    width: 35px;
+    margin-right: 1em;
+}
+
+.frase {
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 40px;
+    margin: 0 0 .5em 0;
+}
+
+.descricao {
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 25px;
+    color: #6C6C80;
+    margin: 0 0 3em 0;
+}
+
+.btn {
+    border-radius: 8px;
+}
+
+.entrar {
+    width: 100%;
+    display: flex;
+    text-align: center;
+    align-content: center;
+    padding: 0;
+
+    overflow: hidden;
+    border-radius: 8px;
+    
+    font-family: 'Ubuntu';
+    font-size: 15px;
+    font-weight: 500;
+    color: white;
+
+    background-color: #2A5AD3;
+    
+    cursor: pointer;
+}
+
+.entrar-icon {
+    width: 20%;
+    height: 100%;
+    background-color: #082C89;
+    padding: 1em;
+}
+
+.entrar-texto {
+    width: 80%;
+    padding: 1em;
+}
+
+@media screen and (min-width: 768) {
+
+}
