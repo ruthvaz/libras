@@ -12,11 +12,10 @@ body {
 
 .inicio-mobile {
     background-image: url("img/logo-background.png");
-    background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: left top;
-    background-size: contain;
+    background-size: auto;
 }
 
 .container {
@@ -39,6 +38,7 @@ body {
 }
 
 .frase {
+    width: 100%;
     font-weight: 700;
     font-size: 30px;
     line-height: 40px;
@@ -46,6 +46,7 @@ body {
 }
 
 .descricao {
+    width: 100%;
     font-weight: 300;
     font-size: 15px;
     line-height: 25px;
@@ -89,6 +90,83 @@ body {
     padding: 1em;
 }
 
-@media screen and (min-width: 768) {
+/* Tablets */
+
+@media screen and (min-width: 768px) {
+
+    .inicio-mobile {
+        background-size: 70%;
+    }
+
+    .inicio-brand {
+        font-size: 48px;
+    }
+    
+    .inicio-logo {
+        background: url("img/logo.png") center center/70px no-repeat;
+        height: 70px;
+        width: 70px;
+    }
+    
+    .frase {
+        font-size: 60px;
+        line-height: 80px;
+    }
+    
+    .descricao {
+        font-size: 30px;
+        line-height: 50px;
+    }
+
+    .btn {
+        border-radius: 8px;
+    }
+    
+    .entrar {
+        width: 70%;
+        font-size: 30px;
+    }
+    
+}
+
+/* Notebooks */
+
+@media screen and (min-width: 1280px) {
+    
+    .inicio-mobile {
+        background-image: url("img/sign-language.png");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: right center;
+        background-size: auto;
+        background-position-x: 96%;
+    }
+   
+    .container {
+        margin: 0 6em;
+    }
+
+    .inicio-brand {
+        margin: .5em 0 2em 0;
+    }
+
+    .frase {
+        font-size: 48px;
+        line-height: 60px;
+    }
+
+    .descricao {
+        font-size: 24px;
+        line-height: 40px;
+    }
+
+    .frase, .descricao {
+        width: 60%;
+    }
+
+    .entrar {
+        width: 40%;
+        font-size: 24px;
+    }
 
 }
