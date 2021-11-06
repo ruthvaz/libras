@@ -1,29 +1,9 @@
-* {
-    margin: 0;
-    border: 0;
-}
-
-a {
-    text-decoration: none;
-}
-
-body {
-    background-color: #F0F0F5;
-    font-family: 'Ubuntu';
-    font-weight: 300;
-    color: #0C1D27;
-}
-
 .inicio-mobile {
-    background-image: url("img/logo-background.png");
+    background-image: url("../img/logo-background.png");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: left top;
     background-size: auto;
-}
-
-.container {
-    margin: 0 2em;
 }
 
 .inicio-brand {
@@ -35,7 +15,7 @@ body {
 }
 
 .inicio-logo {
-    background: url("img/logo.png") center center/35px no-repeat;
+    background: url("../img/logo.png") center center/35px no-repeat;
     height: 35px;
     width: 35px;
     margin-right: 1em;
@@ -107,7 +87,7 @@ body {
     }
     
     .inicio-logo {
-        background: url("img/logo.png") center center/70px no-repeat;
+        background: url("../img/logo.png") center center/70px no-repeat;
         height: 70px;
         width: 70px;
     }
@@ -138,7 +118,7 @@ body {
 @media screen and (min-width: 1280px) {
     
     .inicio-mobile {
-        background-image: url("img/sign-language.png");
+        background-image: url("../img/sign-language.png");
         background-repeat: no-repeat;
         background-attachment: fixed;
         background-position: right center;
@@ -174,103 +154,3 @@ body {
     }
 
 }
-
-/* Página de Login */
-
-.menu-login {
-    display: flex;
-    width: 100%;
-    align-items: center;
-    font-weight: 700;
-    font-size: 24px;
-    margin: 1em 0 1.3em 0;
-}
-
-.login-branch {
-    display: flex;
-    align-items: center;
-    width: 50%;
-}
-
-.login-logo {
-    display: flex;
-    background: url("img/logo.png") center center/35px no-repeat;
-    height: 35px;
-    width: 35px;
-    margin-right: .6em;
-}
-
-.login-voltar {
-    display: flex;
-    font-size: 18px;
-    align-items: center;
-    float: right;
-
-    width: 50%;
-    justify-self: right;
-}
-
-.login-seta {
-    width: 50%;
-    text-align: right;
-    font-size: 18px;
-    color: #082C89;
-}
-
-.login-link {
-    width: 50%;
-    text-align: right;
-    color: #0C1D27;
-}
-
-.login-form {
-    width: 100%;
-    background-color: #FFF;
-    border-radius: 6px;
-}
-
-.login-form-container {
-    padding: 2em 1.5em;
-}
-
-.login-form-titulo {
-    font-weight: 700;
-    font-size: 26px;
-    margin-bottom: 1em;
-}
-
-.login-form-container label, input {
-    width: 100%;
-}
-
-.login-form-container label {
-    font-size: 14px;
-    color: #6C6C80;
-}
-
-.login-form-container input {
-    background: #F0F0F5;
-    border-radius: 8px;
-    height: 40px;
-    margin: .5em 0 1em 0;
-}
-
-.login-form-container input[type=submit] {
-    background-color: #2A5AD3;
-    font-weight: 700;
-    font-size: 14px;
-    color: #FFF;
-    margin-top: 1.5em;
-}
-
-.login-form-container div:last-child {
-    width: 100%;
-    text-align: center;
-    
-}
-
-.login-form-container div:last-child a {
-    font-size: 9px;
-    color: #0C1D27;        
-}
-

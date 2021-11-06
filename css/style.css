@@ -1,0 +1,29 @@
+* {
+    margin: 0;
+    border: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    background-color: #F0F0F5;
+    font-family: 'Ubuntu';
+    font-weight: 300;
+    color: #0C1D27;
+}
+
+.container {
+    margin: 0 2em;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color:#cacaca;
+}

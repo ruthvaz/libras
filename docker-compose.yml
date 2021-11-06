@@ -3,7 +3,7 @@ version: '3'
 services:
   php:
     volumes:
-      - ./view:/var/www/html
+      - ./:/var/www/html
     image: php:8.0-apache
     ports:
       - 80:80
