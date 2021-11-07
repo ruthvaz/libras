@@ -1,0 +1,60 @@
+.login-form-container input[type='file'] {
+    display: none;
+}
+
+.label-foto {
+    display: block;
+}
+
+.label-foto div {
+    background-color: #E9E9E9;
+        
+    width: 100px;
+    height: 100px;
+    
+    display: flex;
+    margin: auto;
+    margin-bottom: .6em;
+
+    text-align: center; 
+
+    border-radius: 50%;
+
+    justify-content: center;
+    align-items: center;
+
+    border: 3px solid #743ad5;
+    overflow: hidden;
+ 	/*
+    border-image-slice: 1;
+ 	border-width: 3px;
+	border-image-source: linear-gradient(to left, #743ad5, #d53a9d);
+    */
+}
+
+.label-foto img {
+    display: none;
+    width: 100%;
+    height: 100%; 
+    object-fit: cover;
+}
+
+.label-foto-desc {
+    margin-bottom: 2em;
+    font-size: 9px;
+    font-weight: 700;
+    text-align: center;
+    align-content: center;
+}
+
+@media screen and (min-width: 768px) {
+    .label-foto div {
+        width: 200px;
+        height: 200px;
+    }
+
+    .label-foto-desc {
+        margin-bottom: 4em;
+        font-size: 18px;
+    }
+}
