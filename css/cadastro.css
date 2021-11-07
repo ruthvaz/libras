@@ -39,6 +39,12 @@
     object-fit: cover;
 }
 
+#icone-foto {
+    color: #585858;
+    width: 40%;
+    height: 40%;
+}
+
 .label-foto-desc {
     margin-bottom: 2em;
     font-size: 9px;
