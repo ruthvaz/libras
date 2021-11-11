@@ -194,7 +194,7 @@
         grid-template-columns: 1fr 1fr;
     }   
 
-    .lessons-container div:first-child, div:last-child {
+    .lessons-container div:first-child {
         grid-column-start: 1;
         grid-column-end: 3;
     }
@@ -219,7 +219,7 @@
     }
 
     .lessons-container {
-        padding: 4em 4em;
+        padding: 4em 10em;
         margin: 2em 12em;
     }   
 
