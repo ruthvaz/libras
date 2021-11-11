@@ -161,3 +161,42 @@
 .perfil-menu table tr:last-child td a {
     color: #E2335D;
 }
+
+@media screen and (min-width: 768px) {
+
+    .container {
+        margin: 0 4em;
+    }
+    
+    .menu-bar-perfil {
+        font-size: 48px;
+        margin: .3em 0;
+    }
+
+    .menu-logo {
+        background: url("../img/logo.png") center center/70px no-repeat;
+        width: 70px;
+        height: 70px;
+    }
+
+    .menu-bar-perfil div:last-child {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+    }
+
+    .lessons-container {
+        padding: 2em 4em;
+        margin: 2em 4em;
+        border-radius: 10px;
+        
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }   
+
+    .lessons-container div:first-child, div:last-child {
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+
+}
