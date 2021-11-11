@@ -95,3 +95,69 @@
     width: 100%;
     font-size: 18px;
 }
+
+.perfil-menu {
+    text-align: center;
+    color: #FFF;
+    display: none;
+}
+
+.perfil-menu {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    background-color: rgba(12, 29, 39, .9);
+    top: 0;
+    left: 0;
+}
+
+.btn-close-menu {
+    text-align: right;
+    margin: 1em 1em 4em 0;
+
+}
+
+.perfil-menu table {
+    width: 100%;
+}
+
+.perfil-menu table tr {
+    width: 100%;
+    text-align: center;
+}
+
+.perfil-menu table tr td {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FFF;
+    font-size: 24px;
+    font-weight: bold;
+    width: 100%;
+}
+
+.perfil-menu table tr td a {
+    width: 100%;
+    height: 100%;
+    padding: .5em;
+    color: #FFF;
+    font-size: 24px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.perfil-menu table tr td span {
+    margin-left: 0.3em;
+}
+
+.perfil-menu table tr:first-child td {
+    font-size: 30px;
+    margin-bottom: 1em;
+}
+
+.perfil-menu table tr:last-child td a {
+    color: #E2335D;
+}
