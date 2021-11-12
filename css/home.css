@@ -175,7 +175,7 @@
         height: 70px;
     }
 
-    .menu-bar-perfil div:last-child {
+    .menu-bar-perfil .menu-perfil {
         width: 70px;
         height: 70px;
         border-radius: 50%;

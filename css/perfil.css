@@ -15,8 +15,11 @@
     color: #0C1D27;
 }
 
-.perfil-container {
-    width: 100%;
+.menu-voltar span {
+    font-weight: bold;
+}
+
+.login-form-container {
     background-color: #FFF;
     text-align: center;
 }
@@ -31,9 +34,7 @@
     font-size: 15px;
 }
 
-.perfil-form-container div input {
-    height: 40px;
-    
+.perfil-form-container div input {    
     box-sizing: border-box;
     margin: .5em 0 1em 0;
     border-radius: 8px;
@@ -41,24 +42,77 @@
     padding: 0 .9em;
 }
 
-.perfil-form-butoes input[type=submit] {
+.perfil-form-butoes {
+    display: grid;
+    width: 100%;
+}
+
+.perfil-form-butoes div {
+    width: 100%;
+}
+
+.perfil-form-butoes div input[type=submit] {
     background-color: #31AE5B;
     font-weight: 700;
     font-size: 16px;
     color: #FFF;
     margin-top: 1.5em;
+    width: 70%;
 }
 
 .perfil-form-butoes div:last-child {
+    display: flex;
+    justify-content: center;
     width: 100%;
-    text-align: center;
+}
+
+.perfil-form-butoes div:last-child div {
+    width: 100%;
     border: 3px solid #E2335D;
     border-radius: 8px;
+    width: 70%;
     padding: .5em;
 }
 
-.perfil-form-butoes div:last-child a {
-    font-size: 16px;
+.perfil-form-butoes div:last-child div a {
     color: #E2335D;
-    width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+    .menu-voltar, .menu-voltar span {
+        font-size: 26px;
+    }
+    
+    .nome-user {
+        font-size: 26px;
+        margin-bottom: 3em;
+    }
+
+    .nome-user span {
+        font-size: 22px;
+    }
+
+    .perfil-form-butoes input[type=submit] {
+        font-size: 26px;
+        margin-top: 1.5em;
+        width: 70%;
+    }
+    
+    .perfil-form-butoes div:last-child {
+        width: 100%;
+    }
+
+    #btn-cancelar {
+        width: 70%;
+    }
+    
+    .perfil-form-butoes div:last-child a {
+        font-size: 26px;
+        font-weight: 700;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+
+
 }
