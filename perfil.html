@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Home </title>
+    <link rel="icon" href="img/logo.png">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/cadastro.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/perfil.css">
+    <!-- Google Fontes -->
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body class="inicio-mobile">
+    <div class="container">
+
+        <div class="menu-bar-perfil">
+            <div class="menu-brand">
+                <div class="menu-logo"></div>
+                Libras+
+            </div>
+            
+            <div class="menu-voltar">
+                <span class="material-icons">arrow_back</span>
+                <a href="#">Voltar</a>
+            </div>
+        </div>
+
+        <div class="perfil-container">
+            
+            <form action="" method="POST" class="perfil-form" id="formPerfil">
+            
+                <div class="login-form-container">
+                    
+                    <input type="file" name="foto" id="foto">
+                    <label for="foto" class="label-foto">
+                        <div>
+                            <img src="" alt="" id="preview">
+                            <i data-feather="image" id="icone-foto"></i>
+                        </div>
+                    </label>
+                    <div class="nome-user">Nome de usuário <span class="material-icons">edit</span> </div>
+    
+                    <label for="senha-atual">Senha atual</label>
+                    <input type="password" id="senha-atual" name="senha-atual">
+    
+                    <label for="nova-senha">Nova senha</label>
+                    <input type="password" id="nova-senha" name="nova-senha">
+                    
+                    <div class="perfil-form-butoes">
+                        <div><input type="submit" name="salvar" value="Salvar"></div>
+                        <div><a href="#">Cancelar</a></div>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+
+    </div>
+
+    <!-- Script para exibir preview de imagem selecionada para perfil -->
+    <script src="js/foto-perfil.js"></script>
+</body>
+</html>

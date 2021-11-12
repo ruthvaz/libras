@@ -1,0 +1,64 @@
+.menu-voltar {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 700;
+    margin-left: auto;
+}
+
+.menu-voltar span {
+    margin-right: .5em;
+    color: #082C89;
+}
+
+.menu-voltar a {
+    color: #0C1D27;
+}
+
+.perfil-container {
+    width: 100%;
+    background-color: #FFF;
+    text-align: center;
+}
+
+.nome-user {
+    font-weight: 700;
+    font-size: 12px;
+    margin-bottom: 3em;
+}
+
+.nome-user span {
+    font-size: 15px;
+}
+
+.perfil-form-container div input {
+    height: 40px;
+    
+    box-sizing: border-box;
+    margin: .5em 0 1em 0;
+    border-radius: 8px;
+    font-size: 12px;
+    padding: 0 .9em;
+}
+
+.perfil-form-butoes input[type=submit] {
+    background-color: #31AE5B;
+    font-weight: 700;
+    font-size: 16px;
+    color: #FFF;
+    margin-top: 1.5em;
+}
+
+.perfil-form-butoes div:last-child {
+    width: 100%;
+    text-align: center;
+    border: 3px solid #E2335D;
+    border-radius: 8px;
+    padding: .5em;
+}
+
+.perfil-form-butoes div:last-child a {
+    font-size: 16px;
+    color: #E2335D;
+    width: 100%;
+}
