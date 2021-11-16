@@ -5,7 +5,7 @@ USE libras;
 CREATE TABLE usuario (
     id              INT(11)         NOT NULL    PRIMARY KEY     AUTO_INCREMENT,
     nome            VARCHAR(255)    NOT NULL,
-    email           VARCHAR(255)    NOT NULL, 
+    email           VARCHAR(255)    NOT NULL 	UNIQUE, 
     senha           VARCHAR(255)    NOT NULL,
     foto            VARCHAR(255),
     tipo            CHAR(1)         NOT NULL

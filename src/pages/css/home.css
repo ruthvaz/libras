@@ -112,6 +112,7 @@
 .btn-close-menu {
     text-align: right;
     margin: 1em 1em 4em 0;
+    cursor: pointer;
 }
 
 .perfil-menu table {

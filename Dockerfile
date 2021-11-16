@@ -1,5 +1,6 @@
 FROM php:7.3-rc-apache
 
-RUN apt-get update && apt-get install -y \
+RUN sudo apt-get update && apt-get install -y \
     && docker-php-ext-install pdo_mysql \
-    && apt-get clean
+    && apt-get clean \
+    && chmod -R 0755 /var/www/html \

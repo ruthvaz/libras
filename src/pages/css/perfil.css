@@ -75,6 +75,14 @@
     padding: .5em;
 }
 
+.perfil-form-butoes div:last-child div:hover {
+    background-color: #E2335D;
+}
+
+.perfil-form-butoes div:last-child div:hover a {
+    color: white;
+}
+
 .perfil-form-butoes div:last-child div a {
     color: #E2335D;
 }
