@@ -19,30 +19,12 @@ class UsuarioDAO {
 
     }
 
-    public function getByID(Usuario $u) {
-        $sql = 'SELECT * usuario WHERE id = ?';
+    public function getByEmail(Usuario $u) {
+        $sql = 'SELECT * FROM usuario WHERE email = ?';
 
         $stmt = Connection::getConn()->prepare($sql);
-        $stmt->bindValue(1, $u->getId());
+        $stmt->bindValue(1, $u->getEmail());
 
-        $stmt->execute();
-
-        if($stmt->rowCount() > 0):
-            $result = $stmt->fetchAll(\PDO::FETCH_ASSOC);
-            return $result;
-        else:
-            return [];
-        endif;
-    
-
-    }
-
-
-    public function read() {
-
-        $sql = 'SELECT * FROM usuario';
-
-        $stmt = Connection::getConn()->prepare($sql);
         $stmt->execute();
 
         if($stmt->rowCount() > 0):
@@ -54,17 +36,26 @@ class UsuarioDAO {
     
     }
 
-    public function update($p) {
-
-        $sql = 'UPDATE products SET name = ?, description = ? WHERE id = ?';
+    public function login(Usuario $u) {
+        $sql = 'SELECT senha FROM usuario WHERE email = ?';
 
         $stmt = Connection::getConn()->prepare($sql);
-        $stmt->bindValue(1, $p->getName());
-        $stmt->bindValue(2, $p->getDesc());
-        $stmt->bindValue(3, $p->getId());
-
+        $stmt->bindValue(1, $u->getEmail());
+        
         $stmt->execute();
-    
+
+        if($stmt->rowCount() > 0 && $stmt->rowCount() == 1):
+            $result = $stmt->fetch(\PDO::FETCH_ASSOC);
+        else:
+            return [];
+        endif;
+        
+        if(password_verify($u->getSenha(), $result['senha'])):
+            return $this->getByEmail($u);
+        endif;
+
+        return [];
+
     }
 
 }

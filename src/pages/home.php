@@ -1,3 +1,25 @@
+<?php
+
+    require_once '../dao/UsuarioDAO.php';
+    require_once '../model/Usuario.php';
+
+    // Não deixar que alguem entrar em home sem autenticar
+    session_start();
+    if(!isset($_SESSION['logado'])):
+        header('Location: login.php');
+    endif;
+
+    // pegar dados do usuario
+    $user = new Usuario();
+    $user->setEmail($_SESSION['email']);
+
+    $dao = new UsuarioDAO();
+    $dados = $dao->getByEmail($user);
+
+    // var_dump($dados);
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,7 +44,7 @@
             </div>
             
             <div class="menu-perfil">
-                <img src="../uploads/perfil/photo.jpg" alt="Perfil">
+                <img src="../uploads/perfil/<?php echo $dados[0]['foto'] == null ? "user.png" : $dados[0]['foto']; ?>" alt="Perfil">
             </div>
         </div>
 
@@ -36,16 +58,16 @@
             <div class="btn-close-menu"><span class="material-icons">close</span></div>
             <table>
                 <tr>
-                    <td> Nome Genérico </td> 
+                    <td> <?php echo $dados[0]['nome']; ?> </td> 
                 </tr>
                 <tr>
-                    <td> <a href="#">Perfil <span class="material-icons">account_circle</span> </a> </td> 
+                    <td> <a href="perfil.php">Perfil <span class="material-icons">account_circle</span> </a> </td> 
                 </tr>
                 <tr>
                     <td> <a href="#">Ajuda <span class="material-icons">help</span></a> </td> 
                 </tr>
                 <tr>
-                    <td> <a href="#">Sair <span class="material-icons">exit_to_app</span></a> </td> 
+                    <td> <a href="../model/logout.php">Sair <span class="material-icons">exit_to_app</span></a> </td> 
                 </tr>
             </table>
         </div>
