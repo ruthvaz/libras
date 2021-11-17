@@ -8,9 +8,9 @@ class Connection {
         
         if(!isset(self::$instance)):
             self::$instance = new \PDO(
-                'mysql:host=mysql;dbname=libras', 
+                'mysql:host=localhost;dbname=libras', 
                 'root', 
-                '32130'
+                ''
             );
         endif;
             

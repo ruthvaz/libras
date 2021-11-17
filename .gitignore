@@ -1,2 +1,4 @@
 *.Identifier
 mysql-data/
+src/uploads/perfil/
+!src/uploads/perfil/user.png
