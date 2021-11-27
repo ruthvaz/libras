@@ -35,8 +35,11 @@
 
 .menu-bar-bottom {
     width: 100%;
-    height: 2px;
+    height: 1px;
     background-color: #797E8D;
+
+    /* offset-x | offset-y | blur-radius | spread-radius | color */
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
 }
 
 .lessons-container {

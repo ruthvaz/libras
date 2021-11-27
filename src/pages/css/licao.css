@@ -1,0 +1,73 @@
+#licao {
+    max-width: 800px;
+
+    margin: auto;
+    margin-top: 2em;
+    padding: 1em .5em;
+    
+    background-color: #FFF;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+#licao-menu {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+}
+
+#licao-botao-voltar {
+    margin-right: .3em;
+
+    color: #082C89;
+}
+
+#licao-titulo {
+    color: #0C1D27;
+    font-weight: 700;
+}
+
+#licao-botao-questoes {
+    margin-left: auto;
+    padding: 2px;
+
+    font-weight: 700;
+    font-size: 14px;
+
+    color: #2A5AD3;
+    background-color: rgba(0,0,0,0);
+    border: 1px solid #2A5AD3;
+    border-radius: 4px;
+    transition: .4s;
+}
+
+#licao-botao-questoes:hover {
+    color: #fff;
+    background-color: #2A5AD3;
+}
+
+#licao-video {
+    margin: 2em 0;
+}
+
+/* Formatação do texto do artigo em lição */
+
+#licao-artigo h1 {
+    color: #0C1D27;
+    font-weight: 700;
+    font-size: 24px;
+
+    margin: 2em 0em;
+}
+
+#licao-artigo {
+    color: #1A2E39;
+    font-weight: 500;
+    font-size: 18px;
+    text-align: justify;
+}
+
+#licao-artigo a {
+    color: #00A1FF;
+}
