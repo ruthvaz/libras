@@ -76,7 +76,7 @@
 
             <div class="lesson">
                 <div class="lesson-icon">
-                    <a href="#">
+                    <a href="licao.php">
                         <div class="lesson-border">
                             <div class="lesson-image">
                                 <img src="../uploads/licoes/icones/start-up.png" alt="Lesson">

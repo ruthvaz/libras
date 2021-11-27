@@ -43,32 +43,37 @@
                 <button id="licao-botao-questoes">Questões</button>
             </div>
 
-            <!-- Vídeo da lição -->
-            <div id="licao-video">
-                <iframe width="100%" height="135px"
-                        src="https://www.youtube.com/embed/fXedubQsvXg"
-                        title="YouTube video player"
-                        frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                        allowfullscreen>
-                </iframe>
-            </div>
-
-            <!-- Artigo da lição -->
-            <div id="licao-artigo">
-                
-                <h1>Libras</h1>
-                <p>A <b>Língua Brasileira de Sinais</b> é a língua de sinais ou gestual usada por surdos
-                    dos centros urbanos brasileiros e legalmente reconhecida como meio de 
-                    <a href="#">comunicação</a> e expressão. </p>
-                
-                <h1>História</h1>
-                <p>O antigo Instituto dos Surdos, hoje, Instituto Nacional da Educação de Surdos (INES) 
-                    foi a primeira escola para surdos no Brasil, fundada em 1857 por <b>Dom Pedro II</b> 
-                    e teve como primeira denominação o nome Collégio Nacional para Surdos (de ambos os sexos). </p>
-
-            </div>
+            <div id="licao-conteudo-container">
             
+                <!-- Vídeo da lição -->
+                <div id="licao-video">
+                    <iframe 
+                            id="licao-video-iframe"
+                            width="100%"
+                            src="https://www.youtube.com/embed/fXedubQsvXg"
+                            title="YouTube video player"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                    </iframe>
+                </div>
+
+                <!-- Artigo da lição -->
+                <div id="licao-artigo">
+                    
+                    <h1>Libras</h1>
+                    <p>A <b>Língua Brasileira de Sinais</b> é a língua de sinais ou gestual usada por surdos
+                        dos centros urbanos brasileiros e legalmente reconhecida como meio de 
+                        <a href="#">comunicação</a> e expressão. </p>
+                    
+                    <h1>História</h1>
+                    <p>O antigo Instituto dos Surdos, hoje, Instituto Nacional da Educação de Surdos (INES) 
+                        foi a primeira escola para surdos no Brasil, fundada em 1857 por <b>Dom Pedro II</b> 
+                        e teve como primeira denominação o nome Collégio Nacional para Surdos (de ambos os sexos). </p>
+
+                </div>
+                
+            </div>     
         </div>
     
 </div>
