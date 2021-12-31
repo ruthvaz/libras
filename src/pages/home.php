@@ -15,8 +15,7 @@
 
     $dao = new UsuarioDAO();
     $dados = $dao->getByEmail($user);
-
-    // var_dump($dados);
+    $_SESSION['usuario'] = $dados;
 
 ?>
 
@@ -73,11 +72,12 @@
         </div>
         
         <div class="lessons-container">
-
+            
+            <!--
             <div class="lesson">
                 <div class="lesson-icon">
                     <a href="licao.php">
-                        <div class="lesson-border">
+                        <div class="lesson-border bom">
                             <div class="lesson-image">
                                 <img src="../uploads/licoes/icones/start-up.png" alt="Lesson">
                             </div>
@@ -90,7 +90,7 @@
             <div class="lesson">
                 <div class="lesson-icon">
                     <a href="#">
-                        <div class="lesson-border">
+                        <div class="lesson-border mediano">
                             <div class="lesson-image">
                                 <img src="../uploads/licoes/icones/family.png" alt="Lesson">
                             </div>
@@ -103,7 +103,7 @@
             <div class="lesson">
                 <div class="lesson-icon">
                     <a href="#">
-                        <div class="lesson-border">
+                        <div class="lesson-border ruim">
                             <div class="lesson-image">
                                 <img src="../uploads/licoes/icones/fast-food.png" alt="Lesson">
                             </div>
@@ -116,7 +116,7 @@
             <div class="lesson">
                 <div class="lesson-icon">
                     <a href="#">
-                        <div class="lesson-border">
+                        <div class="lesson-border desbloqueado">
                             <div class="lesson-image">
                                 <img src="../uploads/licoes/icones/dictionary.png" alt="Lesson">
                             </div>
@@ -129,7 +129,7 @@
             <div class="lesson">
                 <div class="lesson-icon">
                     <a href="#">
-                        <div class="lesson-border">
+                        <div class="lesson-border bloqueado">
                             <div class="lesson-image">
                                 <img src="../uploads/licoes/icones/dictionary.png" alt="Lesson">
                             </div>
@@ -138,11 +138,11 @@
                 </div>
                 <div class="lesson-name">Vocabulário 2</div>
             </div>
-
+            
             <div class="lesson">
                 <div class="lesson-icon">
                     <a href="#">
-                        <div class="lesson-border">
+                        <div class="lesson-border nova-licao">
                             <div class="lesson-image">
                                 <img src="../uploads/licoes/icones/dictionary.png" alt="Lesson">
                             </div>
@@ -151,6 +151,28 @@
                 </div>
                 <div class="lesson-name">Vocabulário 3</div>
             </div>
+            -->
+
+            <?php
+
+            if($dados[0]['tipo'] == 'P'):
+                echo '
+                    <div class="lesson">
+                        <div class="lesson-icon">
+                            <a href="novalicao.php">
+                                <div class="lesson-border nova-licao">
+                                    <div class="lesson-image">
+                                        <span class="material-icons">add</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="lesson-name">Nova Lição</div>
+                    </div>
+                ';
+            endif;
+
+            ?>
         
 	</div>
 

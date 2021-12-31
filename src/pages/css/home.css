@@ -74,7 +74,30 @@
     width: 100px;
     height: 100px;
     border-radius: 50%;
+}
+
+.bom {
     border: .5em solid #31AE5B;
+}
+
+.mediano {
+    border: .5em solid #F4E23D;
+}
+
+.ruim {
+    border: .5em solid #E2335D;
+}
+
+.desbloqueado {
+    border: .5em solid #3EB5CF;
+}
+
+.bloqueado {
+    border: .5em solid #797E8D;
+}
+
+.nova-licao {
+    border: .5em solid #2A5AD3;
 }
 
 .lesson-image {
@@ -85,6 +108,11 @@
     height: 100%;
     background-color: #3B81EA;
     border-radius: 50%;
+    color: #fff;
+}
+
+.lesson-image span {
+    font-size: 40px;
 }
 
 .lesson-image img {

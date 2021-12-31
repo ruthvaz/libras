@@ -27,3 +27,8 @@ body {
 ::-webkit-scrollbar-thumb {
     background-color:#cacaca;
 }
+
+::selection {
+    background-color: #3B81EA;
+    color: #fff;
+}
