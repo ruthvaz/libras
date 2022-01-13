@@ -2,21 +2,28 @@
 
     require_once '../dao/UsuarioDAO.php';
     require_once '../model/Usuario.php';
+    require_once '../dao/LicaoDAO.php';
+    require_once '../model/Licao.php';
 
     // Não deixar que alguem entrar em home sem autenticar
     session_start();
     if(!isset($_SESSION['logado'])):
         header('Location: login.php');
     endif;
-
+    
     // pegar dados do usuario
     $user = new Usuario();
     $user->setEmail($_SESSION['email']);
 
-    $dao = new UsuarioDAO();
-    $dados = $dao->getByEmail($user);
-    $_SESSION['usuario'] = $dados;
+    $daoUsuario = new UsuarioDAO();
+    global $dadosUsuario;
+    $dadosUsuario = $daoUsuario->getByEmail($user);
+    $_SESSION['usuario'] = $dadosUsuario;
 
+    // pegar dados das lições
+    $daoLicao = new LicaoDAO();
+    $licoes = $daoLicao->getAll();
+   
 ?>
 
 <!DOCTYPE html>
@@ -43,7 +50,7 @@
             </div>
             
             <div class="menu-perfil">
-                <img src="../uploads/perfil/<?php echo $dados[0]['foto'] == null ? "user.png" : $dados[0]['foto']; ?>" alt="Perfil">
+                <img src="../uploads/perfil/<?php echo $dadosUsuario[0]['foto'] == null ? "user.png" : $dadosUsuario[0]['foto']; ?>" alt="Perfil">
             </div>
         </div>
 
@@ -57,7 +64,7 @@
             <div class="btn-close-menu"><span class="material-icons">close</span></div>
             <table>
                 <tr>
-                    <td> <?php echo $dados[0]['nome']; ?> </td> 
+                    <td> <?php echo $dadosUsuario[0]['nome']; ?> </td> 
                 </tr>
                 <tr>
                     <td> <a href="perfil.php">Perfil <span class="material-icons">account_circle</span> </a> </td> 
@@ -73,7 +80,30 @@
         
         <div class="lessons-container">
             
+            <?php
+
+                foreach($licoes as $licao):
+                    
+            ?>
+            
+            <div class="lesson">
+                <div class="lesson-icon">
+                    <a href="licao.php?id=<?php echo $licao['id'] ?>">
+                        <div class="lesson-border bom">
+                            <div class="lesson-image">
+                                <img src="../uploads/licoes/icones/<?php echo $licao['icone'] ?>">
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="lesson-name"><?php echo $licao["titulo"] ?></div>
+            </div>
+            
+            <?php
+                endforeach;
+            ?>
             <!--
+
             <div class="lesson">
                 <div class="lesson-icon">
                     <a href="licao.php">
@@ -155,11 +185,11 @@
 
             <?php
 
-            if($dados[0]['tipo'] == 'P'):
+            if($dadosUsuario[0]['tipo'] == 'P'):
                 echo '
                     <div class="lesson">
                         <div class="lesson-icon">
-                            <a href="novalicao.php">
+                            <a href="licaomanager.php">
                                 <div class="lesson-border nova-licao">
                                     <div class="lesson-image">
                                         <span class="material-icons">add</span>

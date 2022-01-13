@@ -84,6 +84,11 @@
     color: #00A1FF;
 }
 
+#licao-artigo img {
+    margin: 1em 0;
+    max-width: 100%;
+}
+
 @media screen and (min-width: 768px) {
     #licao {
         border-radius: 10px;

@@ -37,6 +37,8 @@
 
     border: 3px solid #743ad5;
     overflow: hidden;
+
+    cursor: pointer;
 }
 
 #label-icone img {
@@ -159,6 +161,11 @@
     border: 2px solid #0C1D27;
     border-radius: 8px;
     margin: 1em 0;
+    overflow: hidden;
+}
+
+#artigo-preview img {
+    max-width: 100%;
 }
 
 #form-butoes {

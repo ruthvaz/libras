@@ -2,11 +2,20 @@
 
     require_once '../dao/UsuarioDAO.php';
     require_once '../model/Usuario.php';
+    require_once '../dao/LicaoDAO.php';
+    require_once '../model/Licao.php';
+    require_once '../../vendor/autoload.php';
 
     // Não deixar que alguem entrar em home sem autenticar
     session_start();
     if(!isset($_SESSION['logado']) || $_SESSION['usuario'][0]['tipo'] != 'P'):
         header('Location: login.php');
+    endif;
+
+    // Verificar se existe o id da lição, que é passado via GET
+    if(isset($_GET['id'])):
+        $daoLicao = new LicaoDAO();
+        $licao = $daoLicao->getById($_GET['id'])[0];
     endif;
 
 ?>
@@ -48,32 +57,34 @@
 
     <div class="menu-bar-bottom"></div>
 
-    <form id="nova-licao-container">
+    <form id="nova-licao-container" method="POST" enctype="multipart/form-data" action="../controller/LicaoManager.php">
         
-        <h2>Nova Lição</h2>
+        <h2><?php echo isset($licao) ? 'Editar Lição' : 'Nova Lição'; ?></h2>
+
+        <input type="hidden" name="licao-id" value="<?php echo isset($licao) ? $licao['id'] : null;  ?>">
 
         <input type="file" name="icone" id="icone">
         <label for="icone" id="label-icone">
             <div>
-                <img src="" alt="" id="preview-icone">
+                <img src="<?php echo isset($licao) ? '../uploads/licoes/icones/'.$licao['icone'] : '../uploads/licoes/icones/start-up.png';  ?>" alt="" id="preview-icone">
                 <span id="texto-preview-icone" class="material-icons">add_a_photo</span>
             </div>
         </label>
         <div class="label-foto-desc">Adicionar ícone</div>
         
         <label for="titulo">Título da Lição</label>
-        <input type="text" id="titulo" name="titulo" required>
+        <input type="text" id="titulo" name="titulo" required value="<?php echo isset($licao) ? $licao['titulo'] : null;  ?>">
         
         <label for="video">Link do vídeo no YouTube</label>
-        <input type="text" id="video" name="video" required>
+        <input type="url" id="video" name="video" required value="<?php echo isset($licao) ? $licao['video'] : null;  ?>">
 
         <label for="posicao">Posição da Lição</label>
         <div id="posicao-container">        
             <div id="icone-posicao">
-                <img src="" alt="" id="preview-posicao"> 
+                <img src="<?php echo isset($licao) ? '../uploads/licoes/icones/'.$licao['icone'] : '../uploads/licoes/icones/start-up.png';  ?>" alt="" id="preview-posicao"> 
                 <span id="texto-preview-posicao" class="material-icons">add_a_photo</span>
             </div>
-            <input type="number" id="posicao" name="posicao" required>
+            <input type="number" id="posicao" name="posicao" required value="<?php echo isset($licao) ? $licao['posicao'] : null;  ?>">
         </div>
 
         <div id="licoes">
@@ -89,7 +100,17 @@
         </div>
 
         <label for="artigo">Artigo da Lição</label>
-        <textarea name="artigo" id="artigo"></textarea>
+        <textarea name="artigo" id="artigo"><?php
+                // o bloco de código abaixo se baseia em: 
+                // 1. ler o arquiva da lição
+                if(isset($licao)):
+                    $pasta = "../uploads/licoes/artigos/";
+                    $arquivoArtigo = fopen($pasta.$licao["artigo"], 'r');
+                    $conteudo = fread($arquivoArtigo, filesize($pasta.$licao["artigo"]));
+                    fclose($arquivoArtigo);   
+                    echo $conteudo;
+                endif;
+            ?></textarea>
 
         <label>Preview do Artigo</label>
         <div id="artigo-preview"></div>

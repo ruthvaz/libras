@@ -2,3 +2,6 @@
 mysql-data/
 src/uploads/perfil/
 !src/uploads/perfil/user.png
+/vendor/
+src/uploads/licoes/artigos/*
+src/uploads/licoes/icones/*

@@ -1,3 +1,23 @@
+<?php
+    require_once '../dao/LicaoDAO.php';
+    require_once '../model/Licao.php';
+    require_once '../../vendor/autoload.php';
+
+    // Não deixar que alguem entrar em home sem autenticar
+    session_start();
+    if(!isset($_SESSION['logado'])):
+        header('Location: login.php');
+    endif;
+
+    // Verificar se existe o id da lição, que é passado via GET
+    if(isset($_GET['id'])):
+        $daoLicao = new LicaoDAO();
+        $licao = $daoLicao->getById($_GET['id'])[0];
+    endif;
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -38,19 +58,25 @@
             <!-- Menu da lição -->
             <div id="licao-menu">
                 <span id="licao-botao-voltar" class="material-icons">arrow_back</span>
-                <a id="licao-titulo" href="home.php">Introdução</a>
+                <a id="licao-titulo" href="home.php"><?php echo $licao["titulo"]; ?></a>
                 
                 <button id="licao-botao-questoes">Questões</button>
             </div>
 
             <div id="licao-conteudo-container">
-            
+                
+                <?php 
+                    // pegar somente o codico do video
+                    $partes_url = explode("/", $licao["video"]);
+                    $code_video = $partes_url[count($partes_url) - 1];
+                ?>
+
                 <!-- Vídeo da lição -->
                 <div id="licao-video">
                     <iframe 
                             id="licao-video-iframe"
                             width="100%"
-                            src="https://www.youtube.com/embed/fXedubQsvXg"
+                            src="https://www.youtube.com/embed/<?php echo $code_video; ?>"
                             title="YouTube video player"
                             frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
@@ -60,23 +86,57 @@
 
                 <!-- Artigo da lição -->
                 <div id="licao-artigo">
-                    
-                    <h1>Libras</h1>
-                    <p>A <b>Língua Brasileira de Sinais</b> é a língua de sinais ou gestual usada por surdos
-                        dos centros urbanos brasileiros e legalmente reconhecida como meio de 
-                        <a href="#">comunicação</a> e expressão. </p>
-                    
-                    <h1>História</h1>
-                    <p>O antigo Instituto dos Surdos, hoje, Instituto Nacional da Educação de Surdos (INES) 
-                        foi a primeira escola para surdos no Brasil, fundada em 1857 por <b>Dom Pedro II</b> 
-                        e teve como primeira denominação o nome Collégio Nacional para Surdos (de ambos os sexos). </p>
+                    <?php
+                        // o bloco de código abaixo se baseia em: 
+                        // 1. ler o arquiva da lição
+                        // 2. converter o conteúdo do arquivo, que está em md, para html
+                        // 3. inserir o html na página
 
+                        $pasta = "../uploads/licoes/artigos/";
+                        $arquivoArtigo = fopen($pasta.$licao["artigo"], 'r');
+                        $conteudo = fread($arquivoArtigo, filesize($pasta.$licao["artigo"]));
+                        fclose($arquivoArtigo);
+
+                        // usamos a biblioteca League\CommonMark para a conversão de md para html
+                        use League\CommonMark\CommonMarkConverter;
+                        
+                        $converter = new CommonMarkConverter([
+                            'html_input' => 'strip',
+                            'allow_unsafe_links' => false,
+                        ]);
+
+                        echo $converter->convertToHtml($conteudo);
+
+                    ?>
                 </div>
                 
+                <?php
+                    if($_SESSION['usuario'][0]['tipo'] == 'P'):
+                ?>
+                
+                <form id="botoes" action="../controller/LicaoDelete.php" method="POST" style="margin-top: 1em;">
+                    <button style="
+                        color: #fff;
+                        background-color: #E2335D;
+                        padding: .3em;
+                        border-radius: 10px;
+                    ">Deletar</button>
+                    <input 
+                        type="hidden" 
+                        name="delete" 
+                        value="<?php echo $licao['id'];?>"
+                    >
+                    <a href="licaomanager?id=<?php echo $licao['id'];?>">Editar</a>
+                </form>
+                
+                <?php
+                    endif;
+                ?>
+
             </div>     
         </div>
     
-</div>
-
+    </div>
+    
 </body>
 </html>

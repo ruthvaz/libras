@@ -7,6 +7,14 @@ textoPreviewPosicao = document.getElementById("texto-preview-posicao");
 
 inputPosicao = document.getElementById("posicao");
 
+if(campoIcone.src != 'http://localhost/libras/src/uploads/licoes/icones/start-up.png') {
+    campoIcone.style.display = "flex";
+    previewPosicao.style.display = "flex";
+
+    textoPreviewIcone.style.display = "none";
+    textoPreviewPosicao.style.display = "none";
+}
+
 inputIcone.addEventListener("change", function(){
 
     if (inputIcone.files && inputIcone.files[0]) {
